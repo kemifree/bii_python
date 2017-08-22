@@ -1,0 +1,48 @@
+python  + selenium 自动化基础教程
+
+
+启动演示：
+一、准备工作
+
+1.首先安装 Selenium
+	
+pip install selenium
+
+2.安装selenium 浏览器驱动
+
+官方selenium浏览器驱动下载地址：http://www.seleniumhq.org/download/
+
+谷歌浏览器selenium驱动下载地址：ChromeDriver - WebDriver for Chrome https://sites.google.com/a/chromium.org/chromedriver/downloads
+
+（备注：谷歌浏览器selenium驱动已经添加到附件中）
+
+二、正式工作
+
+#演示
+
+from selenium import webdriver
+#"C:\\Users\\Acer\\Desktop\\git\\selenium\\chromedriver_win32\\chromedriver.exe"  这个路径是谷歌浏览器selenium驱动本地存放地址
+browser = webdriver.Chrome("C:\\Users\\Acer\\Desktop\\git\\selenium\\chromedriver_win32\\chromedriver.exe")
+browser.get("http://www.baidu.com")
+browser.find_element_by_id("kw").send_keys("selenium")
+browser.find_element_by_id("su").click()
+#browser.quit() 关闭浏览器
+
+##注意要点：
+用selenium 关键点是：元素的定位
+推荐使用find_element_by_xpath 可以直接使用谷歌浏览器---检查（或者按F12）---弹出html页面代码（选择左上角鼠标小箭头定位到待选取的元素）
+
+---（定位到html元素代码）----右键（选择copy选项按钮）----再选择copy xpath 即可
+
+###难点
+元素的定位
+
+
+更多详细内容请参考以下资料
+
+参考资料
+selenium + python自动化测试环境搭建
+
+1.「UI 测试自动化selenium」汇总  http://www.cnblogs.com/fnng/p/3157639.html
+2.轻松自动化---selenium-webdriver(python) (一) ：http://www.cnblogs.com/fnng/p/3160606.html
+3.Python爬虫利器五之Selenium的用法 ： http://cuiqingcai.com/2599.html
